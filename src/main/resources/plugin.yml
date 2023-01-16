@@ -1,0 +1,37 @@
+name: APHub
+main: org.alazeprt.APHub
+api-version: 1.13
+version: 1.0.0
+commands:
+  aphub:
+    description: APHub main command
+    permission: aphub.player.help
+  sethub:
+    description: Set hub
+    permission: aphub.admin.sethub
+  hub:
+    description: Teleport to hub
+    permission: aphub.player.hub
+permissions:
+  aphub.admin:
+    description: Can perform all administrator actions
+    default: op
+    children:
+      aphub.player.help: true
+      aphub.admin.sethub: true
+      aphub.player.hub: true
+  aphub.player:
+    description: Can perform all player actions
+    default: true
+    children:
+      aphub.player.help: true
+      aphub.player.hub: true
+  aphub.admin.sethub:
+    description: Hub can be set
+    default: op
+  aphub.player.help:
+    description: Can view help
+    default: true
+  aphub.player.hub:
+    description: Can be teleport to the hub
+    default: true

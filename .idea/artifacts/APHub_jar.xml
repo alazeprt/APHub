@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="APHub:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/APHub_jar</output-path>
+    <root id="archive" name="APHub.jar">
+      <element id="module-output" name="APHub" />
+      <element id="file-copy" path="$PROJECT_DIR$/data.yml" />
+    </root>
+  </artifact>
+</component>
