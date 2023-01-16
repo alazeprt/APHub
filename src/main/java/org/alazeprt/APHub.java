@@ -11,7 +11,7 @@ public class APHub extends JavaPlugin {
     @Override
     public void onEnable() {
         this.saveResource("data.yml",false);
-        System.out.println("§cAPHub §ev1.0 §dRelease Version §aEnabled.");
+        System.out.println("§cAPHub §ev1.1 §dRelease Version §aEnabled.");
         Objects.requireNonNull(getCommand("aphub")).setExecutor(new aphub());
         Objects.requireNonNull(getCommand("sethub")).setExecutor(new sethub());
         Objects.requireNonNull(getCommand("hub")).setExecutor(new hub());
@@ -19,6 +19,6 @@ public class APHub extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        System.out.println("§cAPHub §ev1.0 §dRelease Version §cDisabled.");
+        System.out.println("§cAPHub §ev1.1 §dRelease Version §cDisabled.");
     }
 }

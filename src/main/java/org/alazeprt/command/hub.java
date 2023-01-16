@@ -21,12 +21,22 @@ public class hub implements CommandExecutor {
                 Player p = (Player) commandSender;
                 File config = new File(org.alazeprt.APHub.getProvidingPlugin(org.alazeprt.APHub.class).getDataFolder(), "data.yml");
                 FileConfiguration configuration = YamlConfiguration.loadConfiguration(config);
-                String world = configuration.getString("hub.world").toString();
-                double x = configuration.getDouble("hub.x");
-                double y = configuration.getDouble("hub.y");
-                double z = configuration.getDouble("hub.z");
-                p.teleport(new Location(Bukkit.getWorld(world), x, y, z));
-                commandSender.sendMessage("§aSuccessfully teleport to the hub!");
+                String world = "";
+                double x = 0;
+                double y = 0;
+                double z = 0;
+                try{
+                    world = configuration.getString("hub.world").toString();
+                    x = configuration.getDouble("hub.x");
+                    y = configuration.getDouble("hub.y");
+                    z = configuration.getDouble("hub.z");
+                } catch (NullPointerException nullPointerException){
+                    commandSender.sendMessage("§cThe hub has not been defined yet! Unable to teleport!");
+                }
+                if(!world.equals("")){
+                    p.teleport(new Location(Bukkit.getWorld(world), x, y, z));
+                    commandSender.sendMessage("§aSuccessfully teleport to the hub!");
+                }
             }
         } else{
             commandSender.sendMessage("§cYou don't have permission to do this!");
