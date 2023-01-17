@@ -10,6 +10,7 @@ player:
   no_permission: "§cYou don't have permission to do this!"
   hub_not_found: "§cThe hub has not been defined yet! Unable to teleport!"
   teleport_successfully: "§aSuccessfully teleport to the hub!"
+  unknown_command: "§cUnknown Command! Type /aphub to view help"
 console:
   only_player: "§cThis command can only be executed by players!"
 admin:
