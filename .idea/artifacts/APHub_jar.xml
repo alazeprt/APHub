@@ -4,6 +4,7 @@
     <root id="archive" name="APHub.jar">
       <element id="module-output" name="APHub" />
       <element id="file-copy" path="$PROJECT_DIR$/data.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/message.yml" />
     </root>
   </artifact>
 </component>

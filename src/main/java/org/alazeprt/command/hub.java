@@ -12,34 +12,36 @@ import org.bukkit.entity.Player;
 import java.io.File;
 
 public class hub implements CommandExecutor {
+    File config = new File(org.alazeprt.APHub.getProvidingPlugin(org.alazeprt.APHub.class).getDataFolder(), "message.yml");
+    FileConfiguration configuration = YamlConfiguration.loadConfiguration(config);
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(commandSender.hasPermission("aphub.player.hub")){
             if(commandSender.getName().equals("CONSOLE")){
-                commandSender.sendMessage("§cThis command can only be executed by players!");
+                commandSender.sendMessage(configuration.getString("console.only_player").replace("&","§"));
             } else{
                 Player p = (Player) commandSender;
-                File config = new File(org.alazeprt.APHub.getProvidingPlugin(org.alazeprt.APHub.class).getDataFolder(), "data.yml");
-                FileConfiguration configuration = YamlConfiguration.loadConfiguration(config);
+                File config2 = new File(org.alazeprt.APHub.getProvidingPlugin(org.alazeprt.APHub.class).getDataFolder(), "data.yml");
+                FileConfiguration configuration2 = YamlConfiguration.loadConfiguration(config2);
                 String world = "";
                 double x = 0;
                 double y = 0;
                 double z = 0;
                 try{
-                    world = configuration.getString("hub.world").toString();
-                    x = configuration.getDouble("hub.x");
-                    y = configuration.getDouble("hub.y");
-                    z = configuration.getDouble("hub.z");
+                    world = configuration2.getString("hub.world").toString();
+                    x = configuration2.getDouble("hub.x");
+                    y = configuration2.getDouble("hub.y");
+                    z = configuration2.getDouble("hub.z");
                 } catch (NullPointerException nullPointerException){
-                    commandSender.sendMessage("§cThe hub has not been defined yet! Unable to teleport!");
+                    commandSender.sendMessage(configuration.getString("player.hub_not_found").replace("&","§"));
                 }
                 if(!world.equals("")){
                     p.teleport(new Location(Bukkit.getWorld(world), x, y, z));
-                    commandSender.sendMessage("§aSuccessfully teleport to the hub!");
+                    commandSender.sendMessage(configuration.getString("player.teleport_successfully").replace("&","§"));
                 }
             }
         } else{
-            commandSender.sendMessage("§cYou don't have permission to do this!");
+            commandSender.sendMessage(configuration.getString("player.no_permission").replace("&","§"));
         }
         return false;
     }

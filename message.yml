@@ -4,9 +4,7 @@ player:
   help:
     - "&cAPHub help"
     - "§e/sethub §6- Set hub"
-    - "§e/setlobby §6- Set lobby"
     - "§e/hub §6- Teleport to hub"
-    - "§e/lobby §6- Teleport to lobby"
   no_permission: "§cYou don't have permission to do this!"
   hub_not_found: "§cThe hub has not been defined yet! Unable to teleport!"
   teleport_successfully: "§aSuccessfully teleport to the hub!"
