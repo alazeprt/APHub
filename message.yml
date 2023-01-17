@@ -1,0 +1,17 @@
+# This is the message configuration file of the APHub
+# Tip: You can use "&" instead of color code "§"
+player:
+  help:
+    - "&cAPHub help"
+    - "§e/sethub §6- Set hub"
+    - "§e/setlobby §6- Set lobby"
+    - "§e/hub §6- Teleport to hub"
+    - "§e/lobby §6- Teleport to lobby"
+  no_permission: "§cYou don't have permission to do this!"
+  hub_not_found: "§cThe hub has not been defined yet! Unable to teleport!"
+  teleport_successfully: "§aSuccessfully teleport to the hub!"
+console:
+  only_player: "§cThis command can only be executed by players!"
+admin:
+  set_failed: "§cFailed to set the hub! Error message:"
+  successfully_set: "§aSuccessfully set the hub in the [world], with position X=[x], Y=[y], Z=[z]"
