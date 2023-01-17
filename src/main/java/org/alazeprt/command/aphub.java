@@ -8,7 +8,7 @@ public class aphub implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(strings.length == 0){
             if(commandSender.hasPermission("aphub.player.help")){
-                commandSender.sendMessage("§cAPHub §aAdmin help");
+                commandSender.sendMessage("§cAPHub help");
                 commandSender.sendMessage("§e/sethub §6- Set hub");
                 commandSender.sendMessage("§e/setlobby §6- Set lobby");
                 commandSender.sendMessage("§e/hub §6- Teleport to hub");
@@ -18,7 +18,7 @@ public class aphub implements CommandExecutor {
             }
         } else if(strings.length == 1 && strings[0].equals("help")){
             if(commandSender.hasPermission("aphub.player.help")){
-                commandSender.sendMessage("§cAPHub §aAdmin help");
+                commandSender.sendMessage("§cAPHub help");
                 commandSender.sendMessage("§e/sethub §6- Set hub");
                 commandSender.sendMessage("§e/setlobby §6- Set lobby");
                 commandSender.sendMessage("§e/hub §6- Teleport to hub");
